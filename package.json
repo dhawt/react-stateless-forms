@@ -1,6 +1,6 @@
 {
   "name": "react-stateless-forms",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "module": "./index.js",
   "browser": "./react-stateless-forms.umd.js",
   "types": "./index.d.js",
