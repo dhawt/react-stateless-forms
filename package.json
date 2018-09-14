@@ -1,15 +1,15 @@
 {
   "name": "react-stateless-forms",
   "version": "0.0.3",
-  "module": "./index.js",
-  "browser": "./react-stateless-forms.umd.js",
-  "types": "./index.d.js",
+  "module": "dist/index.js",
+  "browser": "dist/react-stateless-forms.umd.js",
+  "types": "dist/index.d.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "peers": "install-self-peers --npm -- --ignore-scripts",
-    "build": "npm run peers; rm -r ./dist; tsc; cp package.json ./dist; rollup -c",
+    "build": "npm run peers; rm -r ./dist; tsc; rollup -c",
     "test": "mocha -r test/setup.js --opts test/mocha.opts"
   },
   "peerDependencies": {
