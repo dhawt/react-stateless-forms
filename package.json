@@ -1,6 +1,10 @@
 {
   "name": "react-stateless-forms",
-  "version": "0.0.1",
+  "version": "0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dhawt/react-stateless-forms.git"
+  },
   "module": "dist/index.js",
   "browser": "dist/react-stateless-forms.umd.js",
   "types": "dist/index.d.js",
@@ -9,7 +13,7 @@
   ],
   "scripts": {
     "peers": "install-self-peers --npm -- --ignore-scripts",
-    "build": "npm run peers; rm -r ./dist; tsc; cp package.json ./dist; rollup -c",
+    "build": "npm run peers; rm -r ./dist; tsc; rollup -c",
     "test": "mocha -r test/setup.js --opts test/mocha.opts"
   },
   "peerDependencies": {
