@@ -25,7 +25,7 @@ import { dottedPaths } from '../utilities';
 */
 class ValidationSet {
   validators: {};
-  validatorKeys: never[];
+  validatorKeys: string[];
 
   constructor(validators = {}) {
     this.validators = validators;
