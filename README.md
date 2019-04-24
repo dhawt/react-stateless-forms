@@ -1,5 +1,7 @@
 # React Stateless Forms
 
+[![CircleCI](https://circleci.com/gh/dhawt/react-stateless-forms/tree/master.svg?style=svg)](https://circleci.com/gh/dhawt/react-stateless-forms/tree/master)
+
 A flexible, stateless form solution for React.  Plays well with Redux, Casium, or similar application state
 architectures.
 
