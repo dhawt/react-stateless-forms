@@ -1,6 +1,8 @@
 version: 2.1
 jobs:
   test:
+    docker:
+      - image: circleci/<language>:<version TAG>
     steps:
       - checkout
       - run: npm test
