@@ -12,7 +12,6 @@ export type ValidatedFormContainerProps = {
 type ValidatedFormContainerState = {
   errors: string[];
   fieldValues: {};
-  resultValues: {};
 };
 
 export default class ValidatedFormContainer extends
@@ -24,7 +23,6 @@ export default class ValidatedFormContainer extends
     this.state = {
       errors: [],
       fieldValues: props.initialValues || {},
-      resultValues: props.initialValues || {},
     };
 
     this.onUpdate = this.onUpdate.bind(this);
@@ -33,7 +31,6 @@ export default class ValidatedFormContainer extends
   public onUpdate(values: {}): void {
     this.setState({
       fieldValues: values,
-      resultValues: values,
     });
   }
 
