@@ -23,7 +23,6 @@
   margin-left: 20px;
 }
 
-
 .react-stateless-forms-formatted-input {
   position: relative;
   margin-bottom: 16px;
@@ -132,4 +131,8 @@
 .react-stateless-forms-error-box {
   background-color: rgb(235,95,95);
   color: white;
+}
+
+.react-stateless-forms-is-required-input label::after {
+  content: '*';
 }

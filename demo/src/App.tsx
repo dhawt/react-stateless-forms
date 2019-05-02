@@ -20,6 +20,16 @@ class App extends React.Component {
           <h3>Example: One optional input, one required</h3>
           <p>
             One input is required using the core IsRequiredValidator, the other is left unvalidated.
+            You can custom-style required inputs via CSS, using the class ".react-stateless-forms-is-required-input".
+          </p>
+          <p>
+            For example:
+            <br/>
+            <code>
+              .react-stateless-forms-is-required-input label::after {'{'}
+                content: '*';
+              {'}'}
+            </code>
           </p>
           <RequiredInputsExample />
 
