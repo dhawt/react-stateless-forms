@@ -17,6 +17,8 @@ import * as React from 'react';
 import {
   pipe, all, has, isEmpty, isNil, flatten, map, uniq, values, merge, curry, defaultTo, is, any, keys, pickBy, path
 } from 'ramda';
+import * as classNames from 'classnames';
+
 import ValidationSet from '../validation_set';
 import ErrorBox from '../error_box';
 import { withProps, cloneRecursive } from '../utilities';
@@ -46,18 +48,14 @@ const validatedChildren =
         (formRole && formRole.submit && !isSubmittable({ submitting, fieldErrors, validators }));
       const value = props.name ? path(props.name.split('.'), fieldValues) : undefined;
       const base = !isNil(value) ? { value } : {};
-      let label = '';
-
-      if (props.hasOwnProperty('label')) {
-        label = (validators[key] || []).some(is(IsRequiredValidator)) ? `${props.label}*` : props.label;
-      }
+      const isRequired = (validators[key] || []).some(is(IsRequiredValidator));
 
       return !formRole ? {} : merge(base, {
         key,
         errors: fieldErrors,
         disabled: toDisable,
         onValidate: pipe(merge(fieldValues), onUpdate),
-        label,
+        className: classNames(props.className, { 'react-stateless-forms-is-required-input': isRequired }),
       });
     });
 
@@ -106,7 +104,15 @@ const ValidatedForm = withProps<ValidatedFormProps, any>(
     <div>
       { renderErrors(errors) }
       <form onSubmit={handleSubmit({ submitting, fieldErrors, validators, fieldValues, onSubmit })}>
-        { validatedChildren(children, { submitting, fieldErrors, onUpdate, fieldValues, validators }) }
+        {
+          validatedChildren(children, {
+            submitting,
+            fieldErrors,
+            onUpdate,
+            fieldValues,
+            validators,
+          })
+        }
       </form>
     </div>
 ));

@@ -1,6 +1,7 @@
 import { withProps } from '../../utilities';
 import { assocPath, isEmpty, omit } from 'ramda';
 import * as React from 'react';
+import * as classNames from 'classnames';
 
 type ValidatedProps = {
   name: string;
@@ -8,6 +9,7 @@ type ValidatedProps = {
   errorMessages?: string;
   onValidate?: (d?: any) => void;
   onChange?: (d?: any) => void;
+  className?: string;
 };
 
 type ValidatedComputedProps = {
@@ -44,8 +46,8 @@ export default <P extends {} = React.SFC<any>>(Child: React.ComponentType<P>): a
         errorMessages: ({ errors, name }: any) =>
           hasErrorMessages({ errors, name }) && toError(errors[name][0]) || null,
       },
-      ({ errorMessages, ...props }: ValidatedProps & ValidatedComputedProps) => (
-        <div className='react-stateless-forms-error-message-container'>
+      ({ errorMessages, className, ...props }: ValidatedProps & ValidatedComputedProps) => (
+        <div className={classNames('react-stateless-forms-error-message-container', className)}>
           <Child {...omit(['onValidate', 'errors'], props) as any} />
           {errorMessages}
         </div>
