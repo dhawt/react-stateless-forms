@@ -4,7 +4,7 @@ import * as  React from 'react';
 import FormattedInput, { FormattedInputPropsWithoutFormat } from '../';
 
 const TextInput: React.SFC<FormattedInputPropsWithoutFormat> = props => (
-  <FormattedInput {...props} format={identity} unformat={identity} />
+  <FormattedInput format={identity} unformat={identity} {...props} />
 );
 
 TextInput.displayName = 'TextInput';
