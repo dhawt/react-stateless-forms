@@ -15,11 +15,11 @@
     "ramda": "^0.25.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts-ts": "2.16.0"
+    "react-scripts-ts": "4.0.8"
   },
   "devDependencies": {
     "tslint-config-airbnb": "^5.3.0",
     "typescript": "^2.8.0",
-    "webpack": "^3.0.0"
+    "webpack": "^5.75.0"
   }
 }
